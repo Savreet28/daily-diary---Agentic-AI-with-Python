@@ -1,0 +1,31 @@
+# Day 1 - Basic Python Concepts
+
+# Variables
+name = "Savreet"
+age = 20
+
+# Print statement
+print("Hello,", name)
+
+# Data Types
+x = 10           # int
+y = 5.5          # float
+text = "Hello"   # str
+items = [1, 2, 3]  # list
+info = {"name": name, "age": age}  # dict
+
+# Conditional
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+# Loop
+for i in range(5):
+    print("Count:", i)
+
+# Function
+def greet(person):
+    return f"Hi {person}, welcome to Python!"
+
+print(greet(name))
