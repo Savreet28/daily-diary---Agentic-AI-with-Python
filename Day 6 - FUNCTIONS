@@ -1,0 +1,70 @@
+# Introduction to Function
+# Function has 3 components
+
+# Create Statement: Create Function in Memory
+def f(a, b):  # 1st component: name and input             
+    print(a)  # 2nd component: definition (means instructions)
+    print(b)
+    a += b
+    result = a*2
+    print('result is:', result)
+    # by default the last statement of any function is return
+    # return means termination of function
+    # return # termination of function
+    return result
+
+
+print('this is the first statement')
+
+# f(10, 20)
+# f(a=10, b=20) # 3rd Component: Execution of function
+result_from_f = f(a=10, b=20) # 3rd Component: Execution of function
+print('result_from_f is:', result_from_f)
+print('this is the last statement')
+
+# Function: It perform square of a number
+
+def square(number):
+    result = number*number
+    return result
+
+print('square is:', square)
+# print('type of square is:', type(square))
+# print('hashcode of square is:', id(square))
+# print('hashcode of square is:', hex(id(square)))
+
+# Whenever we re-define an existing function
+# old function is removed from memory, and new one is constructed
+def square(number1, number2):
+    result = number1 * number2
+    return result
+
+print('square now is:', square)
+
+# square(10)          # 100 # error -> as old function does not exist
+result_from_square = square(10, 20)        # 200
+print('result_from_square is:', result_from_square)
+
+# Functions in Memory
+# T1
+def add(num1, num2):
+    sum = num1 + num2
+    print('sum is:', sum)
+#T2
+def multiply(num1, num2):
+    multiplication = num1 * num2
+    print('multiplication is:', multiplication)
+
+#T3
+number1 = 10
+#T4
+number2 = 20
+
+#T5
+add(number1, number2)
+#T6
+multiply(number1, number2)
+
+#T7
+print('program finished')
+
