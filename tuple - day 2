@@ -1,6 +1,7 @@
 # TUPLE :
 # collection of ordered elements
-# immutable- once created their values cannot be changed
+# Immutable - once created their values cannot be changed
+#Iterable	- Can loop through it
 
 
 # Define a tuple of names
