@@ -1,0 +1,15 @@
+# TUPLE :
+# collection of ordered elements
+# immutable- once created their values cannot be changed
+
+
+# Define a tuple of names
+names = ('phoebe', 'monica', 'rachel')
+
+# Access one name to demonstrate variables and types
+name = names[0]
+
+# Print details
+print(name, type(name), id(name))         # Single name (string)
+print(names, type(names), id(names))      # The whole tuple
+print(names[0], type(names[0]), id(names[0]))  # First element of tuple
