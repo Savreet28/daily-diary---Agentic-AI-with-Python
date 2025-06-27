@@ -1,0 +1,45 @@
+#conditional statements : if, elif, else
+# if statement is used to test a condition and execute a block of code if the condition is true.
+# elif statement is used to test multiple conditions.
+# else statement is used to execute a block of code if none of the previous conditions are true.
+-----
+
+# 🔹 Simple if/else
+# Initial setup
+billing_amount = 500
+coupon_code = 'NOMNOW150'
+
+# 🔹 Simple if/else
+if billing_amount > 449:
+    print('coupon can be applied')
+    print('thank you')
+else:
+    print('coupon cannot be applied')
+    print('amount is low')
+
+print('---')  # Separator
+
+# 🔹 Nested if/else
+if coupon_code == 'NOMNOW150':
+    print('coupon can be applied')
+    if billing_amount > 449: 
+        discounted_amount = billing_amount - 150
+        print('please pay:', discounted_amount)
+        print('thank you')
+    else:
+        print('sorry, applied coupon is not available')
+        print('add items worth', (450 - billing_amount), 'more')
+else:
+    print('coupon invalid. Please check and apply again')
+
+print('---')  # Separator
+
+# 🔹 Combined if with logical operator
+billing_amount = 500  # Reset amount if needed
+if coupon_code == 'NOMNOW150' and billing_amount > 449:
+    print('coupon can be applied')
+    billing_amount -= 150
+    print('please pay:', billing_amount)
+    print('thank you')
+else:
+    print('either coupon or billing amount is failing')
