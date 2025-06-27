@@ -1,0 +1,10 @@
+white_square = '\u25A1'  
+black_square = '\u25A0'  
+
+for row in range(8):  
+    for column in range(4): 
+        if row % 2 == 0:
+            print(white_square, black_square, end=' ')
+        else:
+            print(black_square, white_square, end=' ')
+    print()  
