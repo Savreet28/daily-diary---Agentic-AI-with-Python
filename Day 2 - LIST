@@ -1,0 +1,18 @@
+# List :
+
+# Ordered, mutable (changeable) collection of items
+# Can store mixed data types
+# Defined using square brackets: [ ]
+
+def print_list_details(data):
+    print('data:', data, type(data), id(data))
+    for index in range(len(data)):
+        print('[main]', data[index], type(data[index]), id(data[index]))
+
+matrix = [[1, 2, 3], [3, 4, 5], [6, 7, 8]]
+data = [10, 20, 30, 40, 50]
+print_list_details(data)
+data = [10, 20, 30, 40, 50]
+print('3. data is', data, id(data))
+for index in range(len(data)):
+    print('[main]', data[index], type(data[index]), id(data[index]))
