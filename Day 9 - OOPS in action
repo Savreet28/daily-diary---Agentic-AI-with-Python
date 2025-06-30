@@ -217,3 +217,33 @@ print(vars(fionna))
 # 3. Delete
 # 4. Read
 
+
+#example - MOVIE 
+ 
+class Movie:
+    def __init__(self):
+        print('constructor executed')
+        print('self:', self, type(self), id(self))
+
+
+sarah_movie = Movie()  
+print('sarah_movie:', sarah_movie, type(sarah_movie), id(sarah_movie))
+
+print('Data in Object Referred by sarah_movie:')
+print(vars(sarah_movie))  
+
+
+sarah_movie.name = 'Final Destination'
+sarah_movie.language = 'English'
+sarah_movie.duration = '2 hours'
+
+print('Data in Object now:')
+print(vars(sarah_movie))
+
+rabia_movie = Movie()
+print('rabia_movie:', rabia_movie, type(rabia_movie), id(rabia_movie))
+print('Data in Object Referred by rabia_movie:')
+print(vars(rabia_movie))
+rabia_movie.name = 'Fear Street'
+rabia_movie.language = 'Spanish'
+rabia_movie.duration = '3 hours'
