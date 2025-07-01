@@ -1,0 +1,134 @@
+# HAS A relationship between objects
+"""
+Resturant has a menu
+menu has man dishes
+many resturants has many dishes/menus
+ 1 to 1 
+ 1 to many
+
+
+-------------
+
+Object   | Attributes(data associated with object)
+--------------------------------------------------
+Restuarant | name,phone,email,address,rating,pricePerPerson
+Menu       | name,dishes,numberrofDIshes,
+Dish       | name,price,rating,image
+
+1 resturant has 1 menu
+1 menu has many dishes
+
+"""
+#making class DISH 
+
+class Dish:
+
+    # Constructor - It is used to create an object
+    # it is a function
+    # self is the first input, and it holds the hashcode of current object
+    def __init__(self, name='NA', price=0, rating=0):
+        # LHS self.name -> in the object we will create an attribute name
+        # RHS name (this is the input which we can pass in the constructor as value)
+        self.name = name
+        self.price = price
+        self.rating = rating
+
+    # self will always be available as 1st input
+    # in all the functions, created inside the class
+    
+    def show(self):
+        print("------------------------------")
+        print("------------DISH------------")
+        print("Name:", self.name)
+        print("Price:", self.price)
+        print("Rating:", self.rating)
+        print("------------------------------")
+        print("------------DISH------------")
+        print()
+
+
+"""
+# LHS: dish1 -> is a reference variable, which holds the hashcode for object
+# RHS: Dish() -> execution of constructor with default values 
+# to create an object in memory
+dish1 = Dish()
+
+# RHS: Dish(name='Paneer Tikka', price=200, rating=4.5)
+# execution of constructor with custom values 
+# to create an object in memory
+dish2 = Dish(name='Paneer Tikka', price=200, rating=4.5)
+dish3 = Dish(name='Noodles', price=150, rating=4.0)
+
+print('dish1:', dish1)
+print('dish2:', dish2)
+print('dish3:', dish3)
+
+dish1.show()
+dish2.show()
+dish3.show()
+class Menu:
+
+    def __init__(self, name='NA', dishes=None, number_of_dishes=0):
+        if dishes is None:
+            dishes = []
+        self.name = name
+        self.dishes = dishes
+        self.number_of_dishes = number_of_dishes
+
+    def show(self):
+        print("Menu Name:", self.name)
+        print("Number of Dishes:", self.number_of_dishes)
+        print("Dishes in Menu:")
+        
+"""""
+#making class MENU
+
+
+class Menu:
+    def __init__(self, name='NA', dishes=None, number_of_dishes=0):
+        if dishes is None:
+            dishes = []
+        self.name = name
+        self.dishes = dishes
+        self.number_of_dishes = number_of_dishes
+
+    def show(self):
+        print("------------------------------")
+        print("~~~~~~~~~~~~~MENU~~~~~~~~~~~~~~")
+        print("Name:", self.name)
+        print("Dishes")
+        for index in range(len(self.dishes)):
+            self.dishes[index].show()
+        print("number_of_dishes:", self.number_of_dishes)
+        print("------------------------------")
+        print("~~~~~~~~~~~~~MENU~~~~~~~~~~~~~~")
+
+
+
+#making class RESTURANT 
+
+
+class Restaurant:
+    def __init__(self, name='NA', phone='NA', email='NA',
+                 address='NA', rating=0, price_per_person=0, menu=None):
+        self.name = name
+        self.phone = phone
+        self.email = email
+        self.address = address
+        self.rating = rating
+        self.price_per_person = price_per_person
+        self.menu = menu
+
+    def show(self):
+        print("------------------------------")
+        print("^^^^^^^^^^^RESTURANT^^^^^^^^^^^^")
+        print("Name:", self.name)
+        print("Phone:", self.phone)
+        print("Email:", self.email)
+        print("Address:", self.address)
+        print("Rating:", self.rating)
+        print("Price_per_person:", self.price_per_person)
+        print("Menu")
+        if self.menu:
+            self.menu.show()
+        print("^^^^^^^^^^^RESTURANT^^^^^^^^^^^^")
