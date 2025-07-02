@@ -1,12 +1,46 @@
-# main or driver file for the programAdd commentMore actions
+#main or driver file for the programAdd commentMore actions
 
 song1 = Song(
-                track='1. Laal Pari', 
-                artists='john, jennie', 
+                track='1. Moonlight', 
+                artist='chase atlantic', 
                 album='Album1', 
                 duration=4.5
             )
-# print('[main] song1:', song1)
 
-songs_play_list = PlayList()
-songs_play_list.add(song=song1)
+song2 = Song(
+                track='2. Heat Waves', 
+                artist='glass animals', 
+                album='Album2', 
+                duration=4
+            )
+
+song3 = Song(
+                track='3. Sweater Weather', 
+                artist='The Neighborhood', 
+                album='Album3', 
+                duration=5
+            )
+
+song4 = Song(
+                track='3. Timeless', 
+                artist='The Weeknd', 
+                album='Album4', 
+                duration=3.5
+            )
+
+song5 = Song(
+                track='5. Attention', 
+                artist='Charlie Puth', 
+                album='Album5', 
+                duration=3
+            )
+
+songs_play_list = Playlist()
+
+songs_play_list.add(song = song1)
+songs_play_list.add(song = song2)
+songs_play_list.add(song = song3)
+songs_play_list.add(song = song4)
+songs_play_list.add(song = song5)
+
+songs_play_list.iterate_forward()
