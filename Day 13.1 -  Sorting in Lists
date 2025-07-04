@@ -1,0 +1,100 @@
+#---------
+# swapping  
+"""a = 10
+b = 25
+
+temp = a 
+a = b
+b = temp
+
+print('a=',a)
+print('b=',b)
+"""
+#--------------------------------
+
+# SORTING ALGOS
+
+# 1. bubble sort
+"""
+--10,30,50,20,40-----
+10,30,50,20,40
+10,30,50,20,40
+10,30,20,50,40
+10,30,20,40,50
+10,30,20,40,50
+  --- 10,20,30,40,50
+
+"""
+
+numbers1= [10,5]
+for index in range(len(numbers1)-1):
+    if numbers1[index]>numbers1[index+1]:
+        temp = numbers1[index]
+        numbers1[index] = numbers1[index+1]
+        numbers1[index+1] = temp
+print('sorted numbers1:', numbers1)
+
+
+#.          0.  1.  2.  3.  4. 
+elements1 = [10, 30, 50, 20, 40]
+
+# outer: 0, 1, 2, 3
+for outer in range(len(elements1)-1):
+
+    for inner in range(len(elements1)-outer-1):
+    
+        if elements1[inner] > elements1[inner+1]:
+            temp = elements1[inner]
+            elements1[inner] = elements1[inner+1]
+            elements1[inner+1] = temp
+
+print('sorted elements1 =', elements1)
+
+
+
+name1 = 'anna'
+name2 = 'sia'
+
+if name1 > name2:
+    print('name1 > name2', name1, 'is greater')
+else:
+    print('name2 > name1', name2, 'is greater')
+
+
+# Sort Function
+def sort(data, low_to_high=0):
+    
+    if low_to_high == 0:
+        for outer in range(len(data)-1):
+            for inner in range(len(data)-outer-1):
+                if data[inner] > data[inner+1]:
+                    temp = data[inner]
+                    data[inner] = data[inner+1]
+                    data[inner+1] = temp
+
+    else:
+        for outer in range(len(data)-1):
+            for inner in range(len(data)-outer-1):
+                if data[inner] < data[inner+1]:
+                    temp = data[inner]
+                    data[inner] = data[inner+1]
+                    data[inner+1] = temp
+
+
+numbers = [10, 30, 70, 50, 40, 20, 80]
+print('numbers: ')
+print(numbers)
+
+# sort(data=numbers)
+sort(data=numbers, low_to_high=1)
+
+print('sorted numbers: ')
+print(numbers)
+
+names = ['john', 'sia', 'kim', 'anna', 'ben']
+print('names: ')
+print(names)
+
+sort(data=names)
+print('sorted names: ')
+print(names)
