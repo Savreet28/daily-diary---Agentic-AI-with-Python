@@ -1,27 +1,32 @@
-# String Function
-    # to show the data of object
-    # you can directly print reference variable, which will 
-    # automatically execute string function
-    def __str__(self):
+class Car:
 
+    def __init__(self, name='NA', brand='NA', price=0.0, range=0, hp=0):
+        self.name = name
+        self.brand = brand
+        self.price = price
+        self.range = range
+        self.hp = hp
+
+    def user_input(self):
+        self.name = input("Enter car name: ")
+        self.brand = input("Enter car brand: ")
+        self.price = float(input("Enter car price: "))
+        self.range = int(input("Enter range (km): "))
+        self.hp = int(input("Enter horsepower (HP): "))
+
+    def __str__(self):
         car_string = """
-~~~~~~~~~~~~~{}~~~~~~~~~~~~~
+~~~~~~~~~~~~~ {} ~~~~~~~~~~~~~
 Brand: {}
-Price: {}
-Range: {}
+Price: ₹{} Lakh
+Range: {} km
 HP: {}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"""
-format(self.name, self.brand, self.price, self.range, self.hp)
-"""
-
+""".format(self.name, self.brand, self.price, self.range, self.hp)
         return car_string
-    
-
-# car = Car(name='Harrier EV', brand='Tata', price=23.8, range=650, hp=390)
-# # car = Car()
-# # car.user_input()
-# print(car) # car.__str__()
 
 
-
+# Sample usage
+car = Car()
+car.user_input()
+print(car)
