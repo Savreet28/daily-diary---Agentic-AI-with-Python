@@ -1,0 +1,130 @@
+# WebAPP Model - VISITOR APP
+
+import datetime
+class Visitor:
+
+    def __init__(self, serial_no=None, 
+                 name=None, 
+                 phone=None, 
+                 address=None, 
+                 whome_to_meet=None, 
+                 purpose=None):
+        self.serial_no = serial_no
+        self.name = name
+        self.phone = phone
+        self.address = address
+        self.whome_to_meet = whome_to_meet
+        self.purpose = purpose
+
+        # Automatically pickup the date time stamp
+        self.date_time_stamp = str(datetime.datetime.now())
+
+    def input_visitor_details(self):
+        self.name = input('Enter Your Name: ')
+        self.phone = input('Enter Your Phone: ')
+        self.address = input('Enter Your Address: ')
+        self.whome_to_meet = input('Enter Person to Meet: ')
+        self.purpose = input('Enter Purpose of your Meeting: ')
+        
+    def __str__(self):
+        # CSV String -> Comma Separated Value
+        # Format for excel
+        return '{},{},{},{},{},{},{}\n'.format(self.serial_no,
+                                            self.date_time_stamp,
+                                            self.name,
+                                            self.phone,
+                                            self.address,
+                                            self.whome_to_meet,
+                                            self.purpose
+                                            )
+
+# Utilitly class, where we will have file IO operations
+# IO -> Input (reading data from file into program)
+#       Output (writing data into file from program)
+
+import os # operating system
+
+# Controller using OOPS
+class FileHelper:
+    
+    def __init__(self):
+        
+        visitor_file_path = 'visitor-log.csv'
+
+        if os.path.exists(visitor_file_path):
+            print('FileHelper Initialized')
+        else:
+            file = open('visitor-log.csv', 'a')
+            headers = 'serial_no,date_time_stamp,name,phone,address,whome_to_meet,purpose\n'
+            file.write(headers)
+            print('FileHelper Initialized for the First Time')
+
+    def write_in_file(self, content):
+        file = open('visitor-log.csv', 'a')
+        file.write(content)
+        print('Content:', content, 'Saved in File')
+
+    def read_file(self):
+        file = open('visitor-log.csv', 'r')
+        lines = file.readlines()
+        print('Reading Data From File. Total Lines:', len(lines))
+        for line in lines:
+            print(line)
+
+    def file_size(self):
+        file = open('visitor-log.csv', 'r')
+        data = file.read()
+        return len(data)
+    
+    def lines_in_file(self):
+        file = open('visitor-log.csv', 'r')
+        lines = file.readlines()
+        return len(lines)
+
+"""
+Application
+"""
+
+class VisitorApp:
+
+    def __init__(self):
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        print("Welcome to Visitor Log Book App")
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+
+    def show_menu(self):
+        
+        while True:
+            print('~~~~~~~~~~Select Option~~~~~~~~~~')
+            print("1: Log a Visit")
+            print("2: View Visit Log Book")
+            print("3: Quit")
+            print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+            choice = int(input('Enter Your Choice: '))
+
+
+            if choice == 1:
+                print("Add A new Visitor Log..")
+            elif choice == 2:
+                print("Read All Visitor Logs..")
+            elif choice == 3:
+                break
+            else:
+                print("Invalid Menu Option")
+
+
+"""
+Main File
+"""
+
+from d18d import VisitorApp
+
+def main():
+    app = VisitorApp()
+    app.show_menu()
+
+    #VisitorApp().show_menu()
+
+if __name__ == '__main__':
+    main()
+
