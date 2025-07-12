@@ -4,6 +4,7 @@
 # Magic Variables or Dunders
 # print('__name__ is:', __name__) # output : __main__
 
+
 # you can keep the name main or kuchbhi
 
 # main function :
